@@ -1,0 +1,52 @@
+# .gitignore for CignaNode
+
+# Node
+node_modules/
+
+# Build / output
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Test coverage
+coverage/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+.history/
+
+# Caches
+.cache/
+.parcel-cache/
+.npm/
+
+# Misc
+node-repl-history
+.eslintcache
+
+# Temporary files
+tmp/
+temp/
