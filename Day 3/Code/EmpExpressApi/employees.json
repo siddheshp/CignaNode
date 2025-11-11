@@ -1,22 +1,23 @@
 [
-        {
-        "id": 1,
-        "name": "Alice Johnson",
-        "email": "alice@example.com",
-        "dateOfBirth": "1998-05-15",
-        "mobile": "9876543210"
-    },
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "email": "alice@example.com",
+    "dateOfBirth": "1998-05-15",
+    "mobile": "9876543210"
+  },
   {
     "id": 2,
     "name": "Bob Smith",
     "email": "bob@example.com",
     "dateOfBirth": "1995-10-20",
     "mobile": "9123456780"
+  },
+  {
+    "id": 3,
+    "name": "Aman",
+    "email": "alice@example.com",
+    "dateOfBirth": "1998-05-15",
+    "mobile": "9876543210"
   }
 ]
-  "id": 1,
-  "name": "",
-  "email": "alice@example.com",
-  "dateOfBirth": "1998-05-15",
-  "mobile": "9876543210"
-,
