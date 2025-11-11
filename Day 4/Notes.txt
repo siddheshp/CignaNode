@@ -1,0 +1,17 @@
+Emp API, CRUD, nestjs
+
+1) nodejs
+2) npm i -g @nestjs/cli 
+3) nest new <AppName> => create app with
+	AppModule, AppController, AppService
+4) nest generate resource employees
+	EmpModule, 
+	EmpController, 
+	EmpService,
+	Employee entity
+	Employee DTO (create, update)
+	spec -> unit testing
+5) Get list of employees
+	EmpController => findAll()
+		EmpService => findAll()
+			Emp[]
