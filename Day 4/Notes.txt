@@ -15,3 +15,6 @@ Emp API, CRUD, nestjs
 	EmpController => findAll()
 		EmpService => findAll()
 			Emp[]
+
+main.ts
+	app.setGlobalPrefix('api');
