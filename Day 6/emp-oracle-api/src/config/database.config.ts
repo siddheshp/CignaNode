@@ -1,28 +1,3 @@
-CREATE USER training IDENTIFIED BY training123;
-GRANT CONNECT, RESOURCE TO training;
-ALTER USER training QUOTA UNLIMITED ON USERS;
-
------------------------
-npm install @nestjs/sequelize@11.0.0 sequelize@6.37.7 sequelize-typescript@2.1.6 oracledb@6.10.0
-
-npm i class-validator class-transformer
-npm i dotenv
-npm i -D @types/node
----------------------
-connection from node to oracle
-
-node -e "const o=require('oracledb');o.getConnection({user:'training',password:'training123',connectString:'localhost:1521/XEPDB1'}).then(c=>console.log('Connected'),e=>console.error(e));"
-----------------------------------
-.env file
-
-DB_HOST=localhost
-DB_PORT=1521
-DB_SERVICE_NAME=XEPDB1
-DB_USERNAME=training
-DB_PASSWORD=training123
---------------------------------
-database.config.ts
-
 import { SequelizeModuleOptions } from '@nestjs/sequelize';
 
 export function getSequelizeConfig(): SequelizeModuleOptions {
@@ -50,4 +25,3 @@ export function getSequelizeConfig(): SequelizeModuleOptions {
         logging: false,
     };
 }
----------------------------------
