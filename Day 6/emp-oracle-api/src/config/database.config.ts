@@ -4,7 +4,7 @@ export function getSequelizeConfig(): SequelizeModuleOptions {
     const host = process.env.DB_HOST ?? 'localhost';
     const port = Number(process.env.DB_PORT ?? 1521);
     const serviceName = process.env.DB_SERVICE_NAME ?? 'XEPDB1';
-    const username = process.env.DB_USERNAME ?? 'training';
+    const username = process.env.DB_USERNAME ?? 'trainingTest';
     const password = process.env.DB_PASSWORD ?? 'training123';
 
     // Oracle connect string format: //host:port/serviceName
