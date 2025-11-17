@@ -1,3 +1,13 @@
+//api
 OKTA_ISSUER=https://integrator-1649836.okta.com/oauth2/default
 OKTA_CLIENT_ID=0oaxhzqctrCKvudI8697
 OKTA_AUDIENCE=api://default
+
+//react
+VITE_OKTA_DOMAIN=https://integrator-1649836.okta.com
+
+# Your Okta application client ID
+VITE_OKTA_CLIENT_ID=0oaxhzqctrCKvudI8697
+
+# Set to true for local development (disable HTTPS check)
+VITE_OKTA_DISABLE_HTTPS_CHECK=false
