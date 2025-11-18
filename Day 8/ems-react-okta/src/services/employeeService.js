@@ -11,7 +11,13 @@ const handleResponse = async (response) => {
     if (response.status === 403) throw new Error('Forbidden: Admin role required');
     throw new Error(`Failed: ${response.statusText}`);
   }
-  return response.json();
+  
+  const contentType = response.headers.get('content-type');
+  if (contentType && contentType.includes('application/json')) {
+    return response.json();
+  }
+
+  return null;
 };
 
 export const getAllEmployees = async () => {
