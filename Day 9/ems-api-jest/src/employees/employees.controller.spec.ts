@@ -71,4 +71,15 @@ describe('EmployeesController', () => {
     expect(result).toHaveLength(2);
     expect(mockService.findAll).toHaveBeenCalled();
   })
+
+  it('findOne -> should return single employee by id', async ()=>{
+    const emp : Employee = { id: 1, name: 'John Doe', email: 'john@test.com', salary: 50000, dateOfBirth: new Date('1990-01-15'), mobileNumber: 1234567890, departmentId: 1, };
+
+    mockService.findOne?.mockResolvedValue(emp);
+
+    const result = await controller.findOne(1);
+
+    expect(result).toEqual(emp);
+    expect(mockService.findOne).toHaveBeenCalled();
+  })
 });

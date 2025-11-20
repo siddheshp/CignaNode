@@ -1,7 +1,6 @@
 import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import OktaJwtVerifier from "@okta/jwt-verifier";
-import { Observable } from "rxjs";
 
 @Injectable()
 export class OktaAuthGuard implements CanActivate {
