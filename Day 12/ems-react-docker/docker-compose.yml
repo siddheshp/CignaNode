@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # React Frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ems-react-frontend
+    ports:
+      - "8080:80"
+    environment:
+      - VITE_OKTA_DOMAIN=https://integrator-1649836.okta.com
+      - VITE_OKTA_CLIENT_ID=0oaxhzqctrCKvudI8697
+      - VITE_OKTA_DISABLE_HTTPS_CHECK=false
+      - VITE_API_BASE_URL=http://localhost:3000/api
+    networks:
+      - ems-network
+    depends_on:
+      - backend
+
+  # Backend API (assuming Node.js backend)
+  # Note: You'll need to create this container separately
+  # This is a placeholder showing how to connect them
+  backend:
+    image: localhost/ems-api-okta_api:latest  # Replace with your actual backend image
+    container_name: ems-backend
+    ports:
+      - "3000:3000"
+    networks:
+      - ems-network
+    # Add your backend environment variables here
+    # environment:
+    #   - DATABASE_URL=your-database-url
+    #   - NODE_ENV=production
+
+networks:
+  ems-network:
+    driver: bridge
