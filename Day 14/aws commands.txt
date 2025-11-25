@@ -1,8 +1,10 @@
+Add IAM user policy :  AmazonEC2ContainerRegistryPowerUser
+
 797721580785.dkr.ecr.us-east-1.amazonaws.com/ems-backend
 
 AWS_REGION = 'us-east-1'  
 AWS_ACCOUNT_ID = '797721580785'
-ECR_REPOSITORY = ''
+ECR_REPOSITORY = 'ems-backend'
 IMAGE_TAG = "v1"
 ECR_REGISTRY = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
 IMAGE_NAME = "${ECR_REGISTRY}/${ECR_REPOSITORY}"
