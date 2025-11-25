@@ -1,4 +1,6 @@
-# Set environment variables
+podman build -t ems-backend .
+
+# Set environment variables Windows
 $env:AWS_REGION = 'us-east-1'
 $env:AWS_ACCOUNT_ID = '797721580785'
 $env:ECR_REPOSITORY = 'ems-backend'
@@ -14,7 +16,7 @@ podman push "$($env:IMAGE_NAME):$($env:IMAGE_TAG)"
 podman push "$($env:IMAGE_NAME):latest"
 
 ------------------------
-# Set environment variables
+# Set environment variables Mac
 export AWS_REGION=''
 export AWS_ACCOUNT_ID=''
 export ECR_REPOSITORY=''
@@ -24,6 +26,9 @@ export IMAGE_NAME="${ECR_REGISTRY}/${ECR_REPOSITORY}"
 
 # Login to ECR
 aws ecr get-login-password --region $AWS_REGION | podman login --username AWS --password-stdin $ECR_REGISTRY
+
+# tag - map local image to remote image
+podman tag :latest 797721580785.dkr.ecr.us-east-1.amazonaws.com/ems-backend:v1
 
 # Push images
 podman push ${IMAGE_NAME}:${IMAGE_TAG}
