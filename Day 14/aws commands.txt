@@ -11,6 +11,9 @@ $env:IMAGE_NAME = "$env:ECR_REGISTRY/$env:ECR_REPOSITORY"
 # Login to ECR
 aws ecr get-login-password --region $env:AWS_REGION | podman login --username AWS --password-stdin $env:ECR_REGISTRY
 
+# tag - map local image to remote image
+podman tag localhost/ems-api:latest "$($env:IMAGE_NAME):$($env:IMAGE_TAG)"
+
 # Push images
 podman push "$($env:IMAGE_NAME):$($env:IMAGE_TAG)"
 podman push "$($env:IMAGE_NAME):latest"
@@ -28,7 +31,7 @@ export IMAGE_NAME="${ECR_REGISTRY}/${ECR_REPOSITORY}"
 aws ecr get-login-password --region $AWS_REGION | podman login --username AWS --password-stdin $ECR_REGISTRY
 
 # tag - map local image to remote image
-podman tag :latest 797721580785.dkr.ecr.us-east-1.amazonaws.com/ems-backend:v1
+podman tag localhost/ems-api:latest 797721580785.dkr.ecr.us-east-1.amazonaws.com/ems-backend:v1
 
 # Push images
 podman push ${IMAGE_NAME}:${IMAGE_TAG}
